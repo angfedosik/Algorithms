@@ -1,4 +1,4 @@
-package by.bsu.algorithms.quicksort.sorting;
+package by.bsu.algorithms.quicksort.sort;
 
 public class InsertionSort {
     public static void insertionSort(int[]arr, int num){

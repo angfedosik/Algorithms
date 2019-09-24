@@ -1,6 +1,6 @@
 package by.bsu.algorithms.quicksort;
 import by.bsu.algorithms.quicksort.print.PrintArray;
-import by.bsu.algorithms.quicksort.sorting.QuickSort;
+import by.bsu.algorithms.quicksort.sort.QuickSort;
 import java.util.Random;
 
 public class Main {

@@ -1,16 +1,15 @@
 package by.bsu.algorithms.quicksort.sort;
 
 public class InsertionSort {
-    public static void insertionSort(int[]arr, int num){
-        for(int i=1; i<num; i++){
+    public static void insertionSort(int[]arr, int first, int last){
+        for(int i=first+1; i<=last; i++){
             int element=arr[i];
-            int j=1;
-            for(; j>0; j--){
-                if(arr[j]<arr[j-1])
-                    arr[j]=arr[j-1];
-                else break;
+            int j=i;
+            while (j>first && arr[j-1]>element){
+                arr[j]=arr[j-1];
+                j--;
             }
-            arr[j-1]=element;
+            arr[j]=element;
         }
     }
 }

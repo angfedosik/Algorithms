@@ -7,31 +7,33 @@ public class Main {
     public static void main (String[]args){
         int num=1000000;
         int[]array=new int[num];
-        int[]array1=new int[num];
-        int[]array2=new int[num];
         Random random=new Random();
         for(int i=0; i<num; i++){
             array[i]=random.nextInt(1000000);
-            array1[i]=array[i];
-            array2[i]=array[i];
         }
 
-        long time=System.currentTimeMillis();
-        QuickSort.sortWithLastElement(array, 0, num-1) ;
+        int[]arr=array.clone();
+        int k=30;
+        long time = System.currentTimeMillis();
+        QuickSort.hybridSort(arr, 0, num - 1, k);
+        time = System.currentTimeMillis() - time;
+        System.out.println("Array sorted: "+CheckSort.isArraySorted(arr, num));
+        System.out.println("Time with HYBRID SORT with k = "+ k +": " + time);
+
+        arr=array.clone();
+        time=System.currentTimeMillis();
+        QuickSort.sortWithLastElement(arr, 0, num-1) ;
         time=System.currentTimeMillis()-time;
-        System.out.println(CheckSort.isArraySorted(array, num));
+        System.out.println("\nArray sorted: "+CheckSort.isArraySorted(arr, num));
         System.out.println("Time with LAST element as a pivot: "+time);
 
+        arr=array.clone();
         time=System.currentTimeMillis();
-        QuickSort.sortWithRandomElement(array1, 0, num-1) ;
+        QuickSort.sortWithRandomElement(arr, 0, num-1) ;
         time=System.currentTimeMillis()-time;
-        System.out.println(CheckSort.isArraySorted(array1, num));
+        System.out.println("\nArray sorted: "+CheckSort.isArraySorted(arr, num));
         System.out.println("Time with RANDOM element as a pivot: "+time);
 
-        time=System.currentTimeMillis();
-        QuickSort.hybridSort(array2, 0, num-1);
-        time=System.currentTimeMillis()-time;
-        System.out.println(CheckSort.isArraySorted(array, num));
-        System.out.println("Time with HYBRID sorting: "+time);
+
     }
 }

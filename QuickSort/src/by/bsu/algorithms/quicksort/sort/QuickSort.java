@@ -43,8 +43,7 @@ public class QuickSort {
                 sortWithRandomElement(arr, newIndexOfPivot + 1, last);
         }
     }
-    public static void hybridSort(int[]arr, int first, int last){
-        int k=27;
+    public static void hybridSort(int[]arr, int first, int last, int k){
         if (first<last) {
             if (last - first < k) {
                 InsertionSort.insertionSort(arr, first, last);
@@ -61,9 +60,9 @@ public class QuickSort {
             int newIndexOfPivot = i;
             Swap.SwapElementsInArray(arr, newIndexOfPivot, pivot);
             if (newIndexOfPivot > 0)
-                hybridSort(arr, first, newIndexOfPivot - 1);
+                hybridSort(arr, first, newIndexOfPivot - 1, k);
             if (newIndexOfPivot < last)
-                hybridSort(arr, newIndexOfPivot + 1, last);
+                hybridSort(arr, newIndexOfPivot + 1, last, k);
         }
     }
 }

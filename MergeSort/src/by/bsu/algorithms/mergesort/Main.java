@@ -7,12 +7,12 @@ import java.util.Random;
 
 public class Main {
     public static void main (String[]args) {
-        int num = 10000000;
+        int num = 1000000;
         int[] array = new int[num];
         int[] array1 = new int[num];
         Random random = new Random();
         for (int i = 0; i < num; i++) {
-            array[i] = random.nextInt(10000000);
+            array[i] = random.nextInt(1000000);
             array1[i] = array[i];
         }
         long time=System.currentTimeMillis();

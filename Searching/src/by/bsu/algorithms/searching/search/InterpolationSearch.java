@@ -5,8 +5,10 @@ public class InterpolationSearch {
         if(number<arr[left]|| number>arr[right])
             return -1;
         int index=-1;
+        int counter=0;
         while (right>=left){
-            int mid=left+((number-arr[left])*(right-left)/(arr[right]-arr[left]));
+            counter++;
+            int mid=left+(((right-left)/(arr[right]-arr[left]))*(number-arr[left]));
             if(number<arr[mid])
                 right=mid-1;
             else if(number>arr[mid])
@@ -15,7 +17,9 @@ public class InterpolationSearch {
                 index=mid;
                 break;
             }
+
         }
+        System.out.println(counter);
         return index;
     }
 }

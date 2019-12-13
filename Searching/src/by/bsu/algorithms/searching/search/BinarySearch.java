@@ -5,6 +5,7 @@ public class BinarySearch {
         if(number<arr[left]|| number>arr[right])
             return -1;
         int index=-1;
+        int counter=0;
         while (right>=left){
             int mid=left+(right-left)/2;
             if(number<arr[mid])
@@ -15,7 +16,9 @@ public class BinarySearch {
                 index=mid;
                 break;
             }
+            counter++;
         }
+        System.out.println(counter);
         return index;
     }
 }
